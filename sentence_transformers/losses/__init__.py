@@ -22,6 +22,7 @@ from .CosineSimilarityLoss import CosineSimilarityLoss
 from .DenoisingAutoEncoderLoss import DenoisingAutoEncoderLoss
 from .GISTEmbedLoss import GISTEmbedLoss
 from .MarginMSELoss import MarginMSELoss
+from .MaskedLanguageModelingLoss import MaskedLanguageModelingLoss
 from .Matryoshka2dLoss import Matryoshka2dLoss
 from .MatryoshkaLoss import MatryoshkaLoss
 from .MegaBatchMarginLoss import MegaBatchMarginLoss
@@ -41,6 +42,7 @@ __all__ = [
     "TripletLoss",
     "TripletDistanceMetric",
     "MarginMSELoss",
+    "MaskedLanguageModelingLoss"
     "MatryoshkaLoss",
     "Matryoshka2dLoss",
     "MSELoss",
