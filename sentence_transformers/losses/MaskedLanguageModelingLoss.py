@@ -41,15 +41,15 @@ class MaskedLanguageModelingLoss(nn.Module):
         masked_input_ids = masked_features["input_ids"]
         masked_attention_mask = masked_features["attention_mask"]
         target_input_ids = target_features["input_ids"]
-        print(self.tokenizer.decode(masked_input_ids[0]))
-        print(self.tokenizer.decode(target_input_ids[0]))
+        print(masked_input_ids[0])
+        print(target_input_ids[0])
 
         # Forward pass through the MLM
         outputs = self.mlm(
             input_ids=masked_input_ids, attention_mask=masked_attention_mask
         )
         prediction_scores = outputs.logits
-        print(self.tokenizer.decode(torch.argmax(prediction_scores, dim=-1)[0]))
+        print(torch.argmax(prediction_scores, dim=-1)[0])
         # Create the labels tensor
         mlm_labels = target_input_ids.clone()
         mlm_labels[masked_input_ids != self.tokenizer.mask_token_id] = (
